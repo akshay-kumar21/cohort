@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cors Calculator</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.20.0/axios.min.js"></script>
+    <script>
+       async function sendRequest() {
+        console.log("1. sendResquest() started");
+          
+        const a = document.getElementById("a").value;
+        const b = document.getElementById("b").value;
+
+        console.log("2.values", a,b);
+
+        try {
+            
+            console.log("3. request starting.....");
+
+            const response = await axios.post("http://localhost:5000/sum", {
+                a: a,
+                b: b
+            });
+                console.log("4. response recieved");
+                console.log("5. full response", response);
+                console.log("6. response data", response.data);
+
+
+        } catch(error) {
+            console.log("request failed");
+            console.log(error);
+        }
+    } 
+    </script>
+</head>
+<body>
+    <input id="a" type="number" placeholder="first value"></input>
+    <input id="b" type="number" placeholder="second value"></input>
+
+    <button onclick="sendRequest()">Find sum</button>
+    
+</body>
+</html>
