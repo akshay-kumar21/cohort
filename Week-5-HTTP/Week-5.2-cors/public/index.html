@@ -18,7 +18,7 @@
             
             console.log("3. request starting.....");
 
-            const response = await axios.post("http://localhost:5000/sum", {
+            const response = await axios.post("http://localhost:5005/sum", {
                 a: a,
                 b: b
             });
@@ -35,8 +35,8 @@
     </script>
 </head>
 <body>
-    <input id="a" type="number" placeholder="first value"></input>
-    <input id="b" type="number" placeholder="second value"></input>
+    <input id="a" type="number" placeholder="first value">
+    <input id="b" type="number" placeholder="second value">
 
     <button onclick="sendRequest()">Find sum</button>
     

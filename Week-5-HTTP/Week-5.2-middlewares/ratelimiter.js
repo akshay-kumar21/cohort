@@ -9,6 +9,7 @@ const port = 3000;
 
 app.use((req, res, next) => {
     console.log(`The HTTP Method called is ${req.method}, request to ${req.originalUrl} at ${new Date()}`);
+    console.log(`the url: ${req.protocol}://${req.get('host')}${req.url}`);
     next();
 });
 

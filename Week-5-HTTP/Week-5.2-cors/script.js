@@ -4,10 +4,8 @@ const cors = require("cors");
 const app = express();
 
 
-app.use(express.json());
-app.use(cors({
-    domain: ["http://localhost:3000"]
-}));
+app.use(express.json());// Middleware to parse the request body as JSON
+app.use(cors());// Middleware to enable CORS
 
 app.post("/sum", (req, res) => {
 
@@ -26,4 +24,4 @@ app.post("/sum", (req, res) => {
     })
 })
 
-app.listen(5000);
+app.listen(5005);
