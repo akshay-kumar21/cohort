@@ -1,0 +1,15 @@
+EXPORT AS OBJECT 
+--->  // module.exports = users; /*exporting like this is perfectly fine since the data is small and i
+        // only have users rn, in future i might have post, commets and all other things, so exporting it has
+        // object works better*/
+
+
+**ROUTE ARRANGING ORDER
+```````````````````````````````````` 
+/users/:id/posts/:postId    ← most specific
+/users/:id/posts
+/users/filter
+/users/:id                  ← generic
+/users                      ← collection
+
+-->Order routes from the most specific/exceptional patterns to the most generic patterns.
