@@ -103,6 +103,13 @@ app.get("/users/:id", (req, res) => {
 
 })
 
+// Catch-all route: handles requests that don't match any defined route
+app.use((req, res) => {
+    res.status(404).json({
+        message: "Route not found"
+    });
+});
+
 
 app.listen(5000, () => {
     console.log("server is running");
